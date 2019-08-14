@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import {
   MdToolbarModule,
   MdIconModule,
@@ -10,7 +11,8 @@ import {
   MdSlideToggleModule,
   MdGridListModule,
   MdDialogModule,
-  MdAutocompleteModule
+  MdAutocompleteModule,
+  MdMenuModule
 } from '@angular/material';
 
 @NgModule({
@@ -25,7 +27,8 @@ import {
     MdSlideToggleModule,
     MdGridListModule,
     MdDialogModule,
-    MdAutocompleteModule
+    MdAutocompleteModule,
+    MdMenuModule
   ],
   exports: [
     CommonModule,
@@ -38,7 +41,8 @@ import {
     MdSlideToggleModule,
     MdGridListModule,
     MdDialogModule,
-    MdAutocompleteModule
+    MdAutocompleteModule,
+    MdMenuModule
   ],
   declarations: []
 })
