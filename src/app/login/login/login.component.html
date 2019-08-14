@@ -1,0 +1,42 @@
+<div class="login-wrapper">
+  <md-card>
+    <md-card-header>
+      <md-card-title>登录：</md-card-title>
+    </md-card-header>
+    <md-card-content>
+      <md-input-container  class="full-width">
+        <input mdInput type="text" placeholder="您的email">
+      </md-input-container>
+      <md-input-container class="full-width">
+        <input mdInput (keydown.enter)= "onEnter($event)" type="password" placeholder="密码">
+      </md-input-container>
+      <button md-raised-button color="primary" type="button" (click)="login()">登录</button>
+    </md-card-content>
+    <md-card-actions class="text-right">
+      <p>还没有账户吗？
+        <a href="" routerLink="/register">注册</a>
+      </p>
+      <p>忘记密码？
+        <a href="" routerLink="forget">找回</a>
+      </p>
+    </md-card-actions>
+
+  </md-card>
+
+  <md-card>
+    <md-card-header>
+      <md-card-title>每日佳句</md-card-title>
+      <md-card-subtitle>我是一朵盛开的夏莲 多希望 你能看见现在的我 </md-card-subtitle>
+    </md-card-header>
+    <!-- <img md-card-image src="assets/img/quote_fallback.jpg"> -->
+    <img class="login-card-image" src="assets/img/quote_fallback.jpg">
+    <md-card-content>
+      <span>
+        风霜还不曾来侵蚀
+        秋雨还未滴落
+        青涩的季节又已离我远去
+        我已亭亭　不忧　亦不惧
+      </span>
+    </md-card-content>
+  </md-card>
+</div>
