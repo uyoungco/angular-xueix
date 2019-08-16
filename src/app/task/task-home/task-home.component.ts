@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MdDialog } from '@angular/material';
+import { NewTaskComponent } from '../new-task/new-task.component';
+import { CopyTaskComponent } from '../copy-task/copy-task.component';
 
 @Component({
   selector: 'app-task-home',
@@ -15,20 +18,24 @@ export class TaskHomeComponent implements OnInit {
         {
           id: 1,
           desc: '任务一：吃饭',
+          completed: true,
+          priority: 3,
           owner: {
             id: 1,
             name: '张三',
-            avatar: 'avatar:svg-3'
+            avatar: 'avatars:svg-3'
           },
           dueDate: new Date()
         },
         {
           id: 1,
           desc: '任务二：阿斯顿发发刚刚才vb',
+          completed: false,
+          priority: 2,
           owner: {
             id: 1,
             name: '旺旺',
-            avatar: 'avatar:svg-6'
+            avatar: 'avatars:svg-6'
           },
           dueDate: new Date()
         },
@@ -41,29 +48,40 @@ export class TaskHomeComponent implements OnInit {
         {
           id: 1,
           desc: '任务一：吃饭',
+          completed: false,
+          priority: 1,
           owner: {
             id: 1,
             name: '张三',
-            avatar: 'avatar:svg-4'
+            avatar: 'avatars:svg-4'
           },
           dueDate: new Date()
         },
         {
           id: 1,
           desc: '任务二：阿斯顿发发刚刚才vb',
+          completed: false,
+          priority: 2,
           owner: {
             id: 1,
             name: '旺旺',
-            avatar: 'avatar:svg-8'
+            avatar: 'avatars:svg-8'
           },
           dueDate: new Date()
         },
       ]
     }
   ]
-  constructor() { }
+  constructor(private dialog: MdDialog) { }
 
   ngOnInit() {
   }
 
+  openNewProjectDialog() {}
+  launchNewTaskDialog() {
+    this.dialog.open(NewTaskComponent);
+  }
+  launchCopyTaskDialog() {
+    const dialogRef = this.dialog.open(CopyTaskComponent, {data: {lists: this.lists}})
+  }
 }
