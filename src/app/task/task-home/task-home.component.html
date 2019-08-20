@@ -7,15 +7,18 @@
       [header]="list.name"
       (newTask)="launchNewTaskDialog()"
       (moveAll)="launchCopyTaskDialog()"
+      (delList)="launchConfirmDialog()"
+      (onEditList)="launchEditListDialog()"
     ></app-task-header>
     <app-task-item
       *ngFor="let task of list.tasks"
       [item]="task"
+      (taskClick)="launchUpdateTaskDialog(task)"
     ></app-task-item>
   </app-task-list>
 </div>
 
 
-<button md-fab class="fab-button" type="button" (click)="openNewProjectDialog()">
+<button md-fab class="fab-button" type="button" (click)="launchNewListDialog()">
   <md-icon>add</md-icon>
 </button>

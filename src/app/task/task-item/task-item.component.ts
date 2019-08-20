@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-task-item',
@@ -9,10 +9,18 @@ export class TaskItemComponent implements OnInit {
 
   @Input() item;
   @Input() avatar;
+  @Output() taskClick = new EventEmitter<void>();
   constructor() { }
 
   ngOnInit() {
     this.avatar = this.item.owner ? this.item.owner.avatar : 'unassigned';
-    console.log(this.item.owner)
+  }
+
+  onItemClick() {
+    this.taskClick.emit()
+  }
+
+  onCheckBoxClick(event: Event) {
+    event.stopPropagation()
   }
 }

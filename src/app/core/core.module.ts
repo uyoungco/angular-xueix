@@ -10,6 +10,8 @@ import { loadSvgResources } from '../utils/sug.utils';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+import 'hammerjs';
 @NgModule({
   imports: [
     SharedModule,
