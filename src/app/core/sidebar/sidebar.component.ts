@@ -6,12 +6,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  @Output() toggle = new EventEmitter<void>()
+  @Output() navClick = new EventEmitter<void>()
   constructor() { }
 
   ngOnInit() {
   }
-  openSidebar() {
-    this.toggle.emit()
+
+  onNavClick() {
+    this.navClick.emit()
   }
 }

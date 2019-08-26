@@ -1,14 +1,14 @@
 <md-sidenav-container [class.myapp-dark-theme]="darkTheme">
   <md-sidenav #sidenav mode="over">
-    <app-sidebar (toggle)="sidenav.toggle()"></app-sidebar>
+    <app-sidebar (navClick)="sidenav.toggle()"></app-sidebar>
   </md-sidenav>
   <div class="site">
     <header>
       <app-header (toggle)="sidenav.toggle()" (toogleDarkTheme)="switchTheme($event)"></app-header>
     </header>
     <main>
-<!--      <router-outlet></router-outlet>-->
-      <div class="square"></div>
+      <router-outlet></router-outlet>
+<!--      <div class="square" [@square]="squareState" (click)="onClick()"></div>-->
     </main>
     <footer>
       <app-footer></app-footer>

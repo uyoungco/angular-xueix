@@ -6,18 +6,22 @@ import { FooterComponent } from './footer/footer.component'
 
 import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { loadSvgResources } from '../utils/sug.utils';
-import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+import { ServicesModule } from '../services/services.module';
+import { AppRoutingModule } from '../app-routing.module';
+import { loadSvgResources } from '../utils/sug.utils';
+import 'rxjs/add/operator/take'
 
 import 'hammerjs';
 @NgModule({
   imports: [
     SharedModule,
-    HttpClientModule,
     HttpModule,
-    BrowserAnimationsModule
+    AppRoutingModule,
+    ServicesModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   declarations: [
     HeaderComponent,
@@ -28,6 +32,10 @@ import 'hammerjs';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+    AppRoutingModule
+  ],
+  providers: [
+    { provide: 'BASE_CONFIG', useValue: 'http://localhost:3000' }
   ]
 })
 export class CoreModule {
